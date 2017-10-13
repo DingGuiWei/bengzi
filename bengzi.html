@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        body{
+            background-color: #000000;
+        }
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .box{
+            width: 300px;
+            margin: 200px auto;
+        }
+        textarea{
+            width: 300px;
+            height: 200px;
+        }
+        .box1{
+            width: 260px;
+            border: 1px solid #000000;
+            padding: 20px;
+            background-color: #ffffff;
+
+        }
+    </style>
+</head>
+<body>
+<div class="box">
+    <textarea></textarea>
+    <div class="box1"></div>
+</div>
+</body>
+</html>
+<script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.js"></script>
+<script>
+    var timr=null;
+
+  $('textarea').on('blur', function () {
+        var a=$(this).val();
+
+
+      var pos=0;
+      clearInterval(timr);
+      timr=setInterval(function(){
+          pos++;
+          $('.box1').html(a.substring(0,pos));     //累加字符串 时间计时器每隔0.5秒pos增加一个字符串
+//        $('.box1'). html(a.html())
+      },300)
+  })
+</script>
+
+
+
+
+
+
+
+
+
+
